@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Вход в систему</title>
+
+<style>
+body{
+    background:#111;
+    font-family:Segoe UI, Arial;
+}
+
+.window{
+    width:360px;
+    background:#f2f2f2;
+    margin:120px auto;
+    border:1px solid #aaa;
+}
+
+.titlebar{
+    background:#e6e6e6;
+    padding:6px 10px;
+    font-size:14px;
+}
+
+.content{
+    padding:20px;
+}
+
+label{
+    display:inline-block;
+    width:70px;
+}
+
+input{
+    width:200px;
+    padding:4px;
+    margin-bottom:10px;
+}
+
+button{
+    padding:6px 25px;
+    margin-left:75px;
+}
+
+.popup{
+    display:none;
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    background:#f2f2f2;
+    border:1px solid #888;
+    width:300px;
+}
+
+.popup .titlebar{
+    background:#e6e6e6;
+}
+
+.popup-body{
+    display:flex;
+    align-items:center;
+    padding:20px;
+}
+
+.icon{
+    width:32px;
+    height:32px;
+    border-radius:50%;
+    background:#6fa8ff;
+    color:white;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-right:12px;
+}
+
+.popup-footer{
+    text-align:center;
+    padding-bottom:15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="window">
+    <div class="titlebar">Вход в систему</div>
+
+    <div class="content">
+        <div>
+            <label>Логин:</label>
+            <input id="login">
+        </div>
+
+        <div>
+            <label>Пароль:</label>
+            <input type="password" id="password">
+        </div>
+
+        <button onclick="login()">Войти</button>
+    </div>
+</div>
+
+<div class="popup" id="popup">
+    <div class="titlebar">Успех</div>
+
+    <div class="popup-body">
+        <div class="icon">i</div>
+        <div>Вход выполнен успешно!</div>
+    </div>
+
+    <div class="popup-footer">
+        <button onclick="closePopup()">OK</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
